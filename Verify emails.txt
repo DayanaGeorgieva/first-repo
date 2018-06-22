@@ -1,0 +1,25 @@
+﻿
+using System;
+using System.Text.RegularExpressions;
+
+namespace p01_Emails
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string pattern = @"\s[A-Za-z0-9]+([.\-_][A-Za-z0-9]+)*@[A-Za-z]+(\-[A-Za-z]+)*(\.[A-Za-z]+)+";
+            Regex regex = new Regex(pattern);
+
+            string text = Console.ReadLine();
+            MatchCollection matched = regex.Matches(text);
+         
+
+            foreach (Match match in matched)
+            {
+                Console.WriteLine(match);
+            }
+           
+        }
+    }
+}
